@@ -1,0 +1,324 @@
+/* Google Fonts - Jua, Do Hyeon, Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Do+Hyeon&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+:root {
+    --main-color: #1a2a3a; /* Deeper Dark Blue */
+    --accent-color: #bdbdbd; /* Slightly muted Silver */
+    --text-color: #f0f8ff; /* Alice Blue for readability */
+    --bg-color: #2b3b4a; /* Section background, slightly lighter */
+    --highlight-color: #ff6347; /* Tomato Red for urgency/passion */
+    --link-hover-color: #ffd700; /* Gold for strong hover effect */
+    --border-glow: rgba(255, 99, 71, 0.5); /* Glowing border effect */
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--main-color), #0f1a26); /* Subtle gradient */
+    color: var(--text-color);
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--highlight-color); /* Strong border for emphasis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'Jua', sans-serif; /* Jua for strong title */
+    font-size: 3.8em;
+    color: var(--highlight-color); /* Highlight color for main title */
+    text-shadow: 0 0 15px var(--highlight-color), 0 0 20px rgba(255, 99, 71, 0.8); /* Glowing effect */
+    animation: pulse 1.5s infinite alternate; /* Pulsing animation for urgency */
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(1.03); opacity: 0.9; }
+}
+
+header p {
+    font-family: 'Do Hyeon', sans-serif; /* Do Hyeon for subheading */
+    font-size: 1.5em;
+    margin-top: 15px;
+    font-weight: 400;
+    color: var(--accent-color);
+}
+
+/* Main Layout - Grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider min for content */
+    gap: 35px; /* Increased gap */
+    padding: 50px 0;
+}
+
+.grid-item {
+    background: var(--bg-color);
+    padding: 35px;
+    border-radius: 12px; /* Slightly more rounded */
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 20px var(--border-glow); /* Stronger shadow with glow */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative; /* For pseudo-elements */
+    overflow: hidden;
+}
+
+.grid-item:hover {
+    transform: translateY(-8px) scale(1.01); /* More pronounced hover effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 30px var(--highlight-color); /* Intense hover glow */
+}
+
+h2 {
+    font-family: 'Do Hyeon', sans-serif;
+    color: var(--highlight-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    position: relative;
+    text-shadow: 0 0 8px rgba(255, 99, 71, 0.8);
+}
+
+h2::after {
+    content: '🔥'; /* Flame emoji for emphasis */
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateX(-50%) translateY(0); }
+    to { transform: translateX(-50%) translateY(-5px); }
+}
+
+p {
+    margin-bottom: 18px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+a {
+    color: var(--link-hover-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-color);
+    text-shadow: 0 0 8px var(--highlight-color);
+}
+
+/* About Me Section */
+#about .intro-phrase {
+    font-family: 'Jua', sans-serif;
+    font-style: normal; /* Remove italic */
+    font-size: 1.6em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--link-hover-color);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+#about .highlights {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+#about .highlights li {
+    background-color: rgba(255, 255, 255, 0.05); /* Very subtle background for list items */
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border-left: 4px solid var(--highlight-color); /* Strong left border */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#about .highlights li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--link-hover-color);
+}
+
+.contact-info {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px dashed var(--accent-color);
+    text-align: center;
+    position: relative;
+}
+
+.contact-info h3 {
+    font-family: 'Do Hyeon', sans-serif;
+    color: var(--link-hover-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-shadow: 0 0 5px var(--link-hover-color);
+}
+
+.contact-info p {
+    margin: 8px 0;
+    font-size: 1.1em;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.skill-category h3 {
+    font-family: 'Jua', sans-serif;
+    color: var(--link-hover-color);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    text-align: left;
+    text-shadow: 0 0 5px var(--link-hover-color);
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-category li {
+    background-color: var(--main-color);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 1em;
+    white-space: nowrap;
+    border: 1px solid var(--accent-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-category li:hover {
+    background-color: var(--highlight-color);
+    color: var(--main-color);
+    transform: scale(1.05);
+}
+
+/* Projects, Education, Experience Sections */
+.project-item, .edu-item, .exp-item {
+    background-color: rgba(0, 0, 0, 0.25); /* Darker, more prominent background */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid var(--highlight-color); /* Highlight border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-item:last-child, .edu-item:last-child, .exp-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-item:hover, .edu-item:hover, .exp-item:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+    border-color: var(--link-hover-color);
+}
+
+.project-item h3, .edu-item h3, .exp-item h3 {
+    font-family: 'Do Hyeon', sans-serif;
+    color: var(--link-hover-color);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.8em;
+    text-shadow: 0 0 5px var(--link-hover-color);
+}
+
+.project-item a {
+    font-size: 1.1em;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: 1px solid var(--highlight-color);
+    border-radius: 5px;
+    background-color: var(--highlight-color);
+    color: var(--main-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-item a:hover {
+    background-color: var(--main-color);
+    color: var(--highlight-color);
+    border-color: var(--link-hover-color);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #0f1a26, var(--main-color));
+    color: var(--text-color);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+    border-top: 5px solid var(--highlight-color);
+    font-family: 'Jua', sans-serif;
+    font-size: 1.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .grid-item {
+        padding: 25px;
+    }
+
+    .skill-category ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1.1em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .grid-item {
+        padding: 20px;
+    }
+    .intro-phrase {
+        font-size: 1.3em !important;
+    }
+}
